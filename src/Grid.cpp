@@ -353,7 +353,7 @@ int Grid::checkCollision(Player* player)
 		}
 	}
 
-	if (defeatedZombies == 5 || defeatedZombies + escapedZombies == 5)
+	if ((defeatedZombies == 5 || defeatedZombies + escapedZombies == 5) && player->getHealth() != 0)
 	{
 		defeatedZombies = 0;
 		escapedZombies = 0;
