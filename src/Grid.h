@@ -51,6 +51,7 @@ private:
 	Cactus cactus;
 	int numOfZombies = 0;
 	int defeatedZombies = 0;
+	int escapedZombies = 0;
 };
 
 #endif // !__GRID_H__

@@ -91,7 +91,7 @@ static const SDL_Color CYAN = { 0, 255, 255, 255 };
 static const int UPDATE_INTERVAL_MILLIS = 3000;
 static const int ZOMBIE_INTERVAL_MILLIS = 10000;
 
-static const int PROJECTILE_SPEED = 6;
+static const int PROJECTILE_SPEED = 2;
 static const int PROJECTILE_SIZE = 30;
 
 static const int ZOMBIE_SPEED = 60;

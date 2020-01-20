@@ -329,11 +329,6 @@ int Grid::checkCollision(Player* player)
 				{
 					destroyZombie(t);
 					defeatedZombies++;
-					if (defeatedZombies == 5)
-					{
-						defeatedZombies = 0;
-						return 1;
-					}
 				}
 				projectiles.erase(projectiles.begin() + k);
 				break;
@@ -345,15 +340,28 @@ int Grid::checkCollision(Player* player)
 	{
 		if (zombies.at(m).getPosition().x <= 40)
 		{
+			escapedZombies++;
 			destroyZombie(m);
 			player->updateHealth(-50);
 			if (player->getHealth() <= 0)
 			{
 				player->setHealth(150);
+				defeatedZombies = 0;
+				escapedZombies = 0;
 				return 2;
 			}
 		}
 	}
 
-	return 0;
+	if (defeatedZombies == 5 || defeatedZombies + escapedZombies == 5)
+	{
+		defeatedZombies = 0;
+		escapedZombies = 0;
+		return 1;
+	}
+
+	else
+	{
+		return 0;
+	}
 }
